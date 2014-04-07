@@ -21,17 +21,13 @@ module Clarifier
 
     def clarify(input)
       new_string = input.dup
-      #new_string.downcase!
-      #new_string.gsub!(/[[:punct:]]/, ' ')
-      #new_string.gsub!(/\s+/, ' ')
 
       @stopwords.each do |word|
-        new_string.sub!(/^#{word}\s/i, '') #beginning
-        new_string.gsub!(/\s#{word}\s/i, ' ') #middle
-        new_string.sub!(/\s#{word}$/i, '') #end
+        new_string.gsub!(/(^|\s)#{word}(\s|$)/i, '\1\2')
       end
 
-      #new_string.gsub!(/\s+/, ' ')
+      new_string.gsub!(/\s+/, ' ')
+      new_string.strip!
 
       new_string
     end

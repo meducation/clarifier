@@ -1,3 +1,6 @@
+# 0.0.3 / 2014-04-07
+* [BUGFIX] Simplified regex
+
 # 0.0.2 / 2014-03-12
 * [FEATURE] Added n-gram generator
 
