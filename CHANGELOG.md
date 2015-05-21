@@ -1,3 +1,6 @@
+# 0.9.1 / 2015-05-21
+* [BUGFIX] escape stopwords when used in regex
+
 # 0.9.0 / 2014-12-18
 * [FEATURE] Incremental training of stopwords list using refine() and reset()
 

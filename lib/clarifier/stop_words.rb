@@ -24,7 +24,7 @@ module Clarifier
       new_string = input.dup
 
       @stopwords.each do |word|
-        new_string.gsub!(/(^|\s)#{word}(\s|$)/i, '\1\2')
+        new_string.gsub!(/(^|\s)#{Regexp.escape(word)}(\s|$)/i, '\1\2')
       end
 
       new_string.gsub!(/\s+/, ' ')

@@ -16,6 +16,13 @@ module Clarifier
       skip
     end
 
+    def test_escape_stopwords_in_regex
+      sw = Clarifier::StopWords.new([':)', 'and'])
+      input = 'I like traditional emoticons :)'
+      expected = 'I like traditional emoticons'
+      assert_equal expected, sw.clarify(input)
+    end
+
     def test_use_an_array_of_stopwords_if_provided
       sw = Clarifier::StopWords.new(%w(quick brown lazy))
       input = 'The quick brown fox jumped over the lazy dog.'
